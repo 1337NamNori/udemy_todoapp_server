@@ -37,3 +37,17 @@ export const updateTodo = async (req, res, next) => {
         res.status(409).json({ error: err.message });
     }
 };
+
+export const deleteTodo = async (req, res, next) => {
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        res.status(404).send('The ID is not valid');
+    }
+    try {
+        await Todo.findByIdAndRemove(id);
+        res.status(201).send('ok');
+    } catch (err) {
+        console.log(err);
+        res.status(409).json({ error: err.message });
+    }
+};
