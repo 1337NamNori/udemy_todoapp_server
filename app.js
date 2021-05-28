@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import db from './config/db/index.js';
+import todosRouter from './routes/todos.js';
 
 const app = express();
 
@@ -14,6 +15,8 @@ dotenv.config();
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
+app.use('/todos', todosRouter);
 
 const PORT = process.env.PORT || 5000;
 
