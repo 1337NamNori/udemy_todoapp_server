@@ -10,7 +10,7 @@ export const readTodos = async (req, res, next) => {
     }
 };
 
-export const createTodos = async (req, res, next) => {
+export const createTodo = async (req, res, next) => {
     const todo = new Todo(req.body);
     try {
         await todo.save();

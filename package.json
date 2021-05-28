@@ -6,7 +6,7 @@
     "type": "module",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "beautiful": "prettier --single-quote --trailing-comma all --tab-width 4 --write **/*.{js,json,scss,hbs}",
+        "beautiful": "prettier --single-quote --trailing-comma all --tab-width 4 --write **/*.{js,json}",
         "start": "node app.js",
         "dev": "nodemon app.js"
     },
